@@ -1,0 +1,175 @@
+/* box-shadow: 0px 2px 1px rgba(0,0,0,0.3); */
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.taskHolder{
+  border: 1px solid #000;
+  margin: -1px auto;
+  box-sizing: border-box;
+  width: 50%;
+  min-width: 500px;
+}
+
+.task{
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.taskInfoHolder{
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+}
+.taskInfoHolder > span:hover{
+  cursor: pointer;
+}
+
+.taskBtnAdd{
+  border: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: right;
+}
+
+.btn{
+  margin: 0;
+  padding: 10px 20px;
+  background: none;
+  box-shadow: none;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.btn:hover{
+  cursor: pointer;
+  background-color: rgb(243, 243, 243);;
+}
+.btn:active{
+  color: #000;
+  background-color: rgb(230, 230, 230);;
+}
+
+.taskData, .taskDate{
+  margin-top: 5px;
+}
+
+.taskDataFull{
+  position: absolute;
+  width: 400px;
+  top: 44.7px;
+  left: -8px;
+  background-color: #fff;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-top: transparent;
+  padding: 10px;
+  z-index: 99;
+}
+
+.taskBtnsHolder{
+  display: flex;
+}
+
+span{
+  display: inline-block;
+}
+
+.taskBtn{
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  box-sizing: border-box;
+  padding-left: 6.5px;
+  padding-top: 1.5px;
+}
+.taskBtn:first-child{
+  margin-right: 5px;
+}
+.taskBtn:hover{
+  cursor: pointer;
+  background-color: rgb(243, 243, 243);
+}
+
+/* .taskCheckboxStyle{
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+.taskCheckboxStyle::after{
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.taskCheckboxStyle:hover.taskCheckboxStyle::after{
+  cursor: pointer;
+  background-color: rgb(243, 243, 243);
+} */
+
+/* .taskCheckbox{
+  display: none;
+} */
+/* .taskCheckbox:checked ~ .taskCheckboxStyle::after{
+  content: url('https://img.icons8.com/ios/26/000000/checkmark-filled.png');
+} */
+
+
+
+
+
+.formTask, .formDeleteTask{
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto;
+  background-color: #fff;
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 200px);
+}
+.formDeleteTask > span{
+  margin-bottom: 20px;
+}
+
+.title{
+  text-align: center;
+  font-weight: 300;
+}
+
+.describeField, .fullDescribeField{
+  width: 100%;
+  margin: 10px auto;
+}
+
+.fullDescribeField{
+  height: 60px;
+}
+
+.formBtnHolder{
+  text-align: right;
+}
+
+
+
+
+
+.formError{
+  position: absolute;
+  background-color: #fff;
+  padding: 0px 20px 15px;
+  border: 1px solid #000;
+  border-top: transparent;
+  font-weight: 700;
+}
