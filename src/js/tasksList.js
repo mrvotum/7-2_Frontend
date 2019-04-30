@@ -7,28 +7,34 @@ export default class TasksList {
   }
 
   create() {
+    const makeForm = new CreateForm('main');
+    makeForm.create('loadTasks');
     this.addBtnsListeners();
   }
 
   addBtnsListeners() {
     this.addNewTask.addEventListener('click', () => {
-      const kek = new CreateForm('main');
-      kek.create('newTask');
+      const makeForm = new CreateForm('main');
+      makeForm.create('newTask');
     });
 
     this.tasksHolder.addEventListener('click', (event) => {
       const elementToAction = event.toElement.parentElement.parentElement.parentElement;
 
       if (event.toElement.getAttribute('data-id') === 'taskBtnDelete') {
-        const kek = new CreateForm('main');
-        kek.create('delete', elementToAction);
+        const makeForm = new CreateForm('main');
+        makeForm.create('delete', elementToAction);
       } else if (event.toElement.getAttribute('data-id') === 'taskBtnEdit') {
-        const kek = new CreateForm('main');
-        kek.create('edit', elementToAction);
+        const makeForm = new CreateForm('main');
+        makeForm.create('edit', elementToAction);
       } else if (event.toElement.getAttribute('data-id') === 'taskData' || event.toElement.getAttribute('data-id') === 'taskDate') {
         console.log('Нажали для подробной информации');
-        const kek = new CreateForm('main');
-        kek.fullInfo(elementToAction);
+        const makeForm = new CreateForm('main');
+        makeForm.fullInfo(elementToAction);
+      } else if (event.toElement.getAttribute('type') === 'checkbox') {
+        console.log('изменение статуса задачи');
+        const makeForm = new CreateForm('main');
+        makeForm.create('changeStatus', elementToAction, event.toElement.checked);
       }
 
       // eslint-disable-next-line no-param-reassign
