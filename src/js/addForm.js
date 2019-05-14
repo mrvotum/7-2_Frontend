@@ -3,6 +3,9 @@ import SetDayNow from './setDayNow';
 import ValidateForm from './ValidateForm';
 import API from './api.js';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+const uuid = require('uuid');
+
 export default class CreateForm {
   constructor(parent) {
     this.parentEl = document.querySelector(`[data-id=${parent}]`); // main
@@ -150,7 +153,7 @@ export default class CreateForm {
 
           const liEl = document.createElement('li');
           this.idCount = this.idCountFun();
-          liEl.id = '';
+          liEl.id = uuid.v4();
           liEl.className = 'taskHolder';
           liEl.innerHTML = `<div class="task">
             <div class="taskCheckboxHolder">
@@ -176,9 +179,9 @@ export default class CreateForm {
 
           // перезагружаем страницу, чтобы появились правильные id
           // с интервалом, чтобы успело отправиться на сервер
-          setTimeout(() => {
-            location.reload(true);
-          }, 200);
+          // setTimeout(() => {
+          //   location.reload(true);
+          // }, 500);
 
           this.tasksHolder.appendChild(liEl);
           this.parent.remove();
