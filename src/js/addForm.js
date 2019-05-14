@@ -174,7 +174,7 @@ export default class CreateForm {
 
           // отправляем на сервер
           const api = new API('https://seven-two.herokuapp.com/TicketFull');
-          this.toServerNew(api, describe, fullDescribe);
+          this.toServerNew(liEl.id, api, describe, fullDescribe);
           // отправляем на сервер
 
           // перезагружаем страницу, чтобы появились правильные id
@@ -211,18 +211,19 @@ export default class CreateForm {
   }
 
   // Работа с сервером
-  toServerNew(api, name, description) {
+  toServerNew(id, api, name, description) {
+    const idK = id;
     const apiK = api;
-    const keKname = name;
-    const keKdescription = description;
+    const nameK = name;
+    const descriptionK = description;
     const dateTime = new SetDayNow(new Date());
 
     async function addNewTaskToServer() {
       // добавляем тикет
       const TicketFull = await apiK.add({
-        id: '',
-        name: keKname,
-        description: keKdescription,
+        id: idK,
+        name: nameK,
+        description: descriptionK,
         status: false,
         created: dateTime.create(),
       });
